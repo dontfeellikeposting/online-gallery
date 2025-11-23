@@ -1,6 +1,6 @@
-# don't feel like posting
+# don't feel like posting (dflp)
 
-An international collective of photographers documenting the world around us.
+Website for an international collective of photographers documenting the world, free of social media’s expectations & afterthoughts.
 
 Explore the website here:
 **[↗ dontfeellikeposting.online](https://dontfeellikeposting.online)**
