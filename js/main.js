@@ -1,6 +1,6 @@
 const CONFIG = {
     channelSlug: 'feed-2pl7kppxxkq',
-    perPage: 50,
+    perPage: 40,
     direction: 'desc'
 };
 
