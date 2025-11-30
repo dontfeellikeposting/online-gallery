@@ -6,6 +6,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'FreeMono';
+    src: url('../assets/FreeMono.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* --- Reset & Base --- */
 *,
 *::before,
@@ -218,6 +225,7 @@ u {
 
 /* --- Site Footer --- */
 .site-footer {
+    font-family: 'FreeMono', 'Courier New', monospace;
     text-align: center;
     margin-top: 4rem;
     font-size: 0.9rem;
@@ -248,16 +256,16 @@ u {
 
 @media (max-width: 750px) {
     body {
-        font-size: 0.95rem;
+        font-size: 1rem;
         padding: 6.25rem var(--side-margin-mobile) 3.75rem;
     }
     .site-header {
-        --header-title-size: 1.2rem;
+        --header-title-size: 1.5rem;
         left: var(--side-margin-mobile);
         right: var(--side-margin-mobile);
     }
     .gallery-description {
-        font-size: 0.95rem;
+        font-size: 0.8rem;
         left: var(--side-margin-mobile);
     }   
     #arena-gallery {
