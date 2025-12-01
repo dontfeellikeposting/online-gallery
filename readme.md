@@ -1,6 +1,6 @@
 # don't feel like posting (dflp)
 
-Website for an international collective of photographers documenting the world, free of social media’s expectations & afterthoughts.
+Website for an international collective of photographers documenting the world, free of social media's expectations & afterthoughts.
 
 Explore the website here:
 **[↗ dontfeellikeposting.online](https://dontfeellikeposting.online)**
@@ -13,7 +13,12 @@ Explore the website here:
 
 ## Tech Stack
 
-Vanilla JS • CSS Grid • Are.na API
+Vanilla JS • CSS • Are.na API
+
+**Fonts:**
+- Be Vietnam Pro
+- Liberation Sans
+- FreeMono
 
 ## License
 
