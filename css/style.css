@@ -28,7 +28,7 @@ html {
 
 :root {
     --side-margin: 3.5rem;
-    --side-margin-mobile: 1.5rem;
+    --side-margin-mobile: 1rem;
 }
 
 body {
@@ -57,6 +57,7 @@ h2 {
 .member-name {
     font-weight: normal;
     margin-bottom: 5px;
+    font-size: 1.2rem;
 }
 
 a {
@@ -102,7 +103,7 @@ u {
 
 .site-header h1 a:hover,
 .pin-icon:hover {
-    opacity: 0.6;
+    opacity: 0.8;
 }
 
 /* --- Header Navigation --- */
@@ -129,7 +130,6 @@ u {
     margin-bottom: 1.5rem;
     left: var(--side-margin);
     right: var(--side-margin);
-    font-size: 1rem;
 }
 
 
@@ -256,7 +256,7 @@ u {
 
 @media (max-width: 750px) {
     body {
-        font-size: 1rem;
+        font-size: 0.8rem;
         padding: 6.25rem var(--side-margin-mobile) 3.75rem;
     }
     .site-header {
@@ -267,7 +267,10 @@ u {
     .gallery-description {
         font-size: 0.8rem;
         left: var(--side-margin-mobile);
-    }   
+    }
+    .site-footer {
+        font-size: 0.7rem;
+    }     
     #arena-gallery {
         grid-template-columns: 1fr;
         gap: var(--side-margin-mobile);
