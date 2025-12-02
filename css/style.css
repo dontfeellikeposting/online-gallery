@@ -57,7 +57,7 @@ h2 {
 .member-name {
     font-weight: normal;
     margin-bottom: 5px;
-    font-size: 1.2rem;
+    font-size: 1.7rem;
 }
 
 a {
@@ -270,7 +270,10 @@ u {
     }
     .site-footer {
         font-size: 0.7rem;
-    }     
+    }  
+    .member-name {
+        font-size: 1.1rem;
+    }   
     #arena-gallery {
         grid-template-columns: 1fr;
         gap: var(--side-margin-mobile);
