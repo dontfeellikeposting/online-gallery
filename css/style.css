@@ -1,4 +1,7 @@
-/* --- Font Face --- */
+/* ==========================================================================
+   FONTS
+   ========================================================================== */
+
 @font-face {
     font-family: 'Liberation Sans';
     src: url('../assets/LiberationSans.woff2') format('woff2');
@@ -13,7 +16,10 @@
     font-style: normal;
 }
 
-/* --- Reset & Base --- */
+/* ==========================================================================
+   CSS RESET & BASE
+   ========================================================================== */
+
 *,
 *::before,
 *::after {
@@ -28,10 +34,18 @@ html {
     -moz-osx-font-smoothing: grayscale;
 }
 
+/* ==========================================================================
+   CSS VARIABLES
+   ========================================================================== */
+
 :root {
     --side-margin: 3.5rem;
     --side-margin-mobile: 1rem;
 }
+
+/* ==========================================================================
+   BASE STYLES
+   ========================================================================== */
 
 body {
     font-family: "Liberation Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -40,10 +54,13 @@ body {
     line-height: 1.5;
     font-size: 1.4rem;
     letter-spacing: 0.026em;
-    padding: 6.25rem var(--side-margin) 3.75rem;
+    padding: 6.25rem var(--side-margin-mobile) 3.75rem;
 }
 
-/* --- Typography --- */
+/* ==========================================================================
+   TYPOGRAPHY
+   ========================================================================== */
+
 h1,
 h2 {
     font-family: 'Be Vietnam Pro', "Helvetica Neue", Helvetica, sans-serif;
@@ -56,12 +73,6 @@ h2 {
     font-weight: normal;
 }
 
-.member-name {
-    font-weight: normal;
-    margin-bottom: 5px;
-    font-size: 1.7rem;
-}
-
 a {
     color: inherit;
     text-decoration: none;
@@ -72,18 +83,30 @@ u {
     text-underline-offset: 3px;
 }
 
-/* --- Layout Container --- */
+.member-name {
+    font-weight: normal;
+    margin-bottom: 5px;
+    font-size: 1.7rem;
+}
+
+/* ==========================================================================
+   LAYOUT
+   ========================================================================== */
+
 .container {
     max-width: 1300px;
     margin: 0 auto;
 }
 
-/* --- Site Header --- */
+/* ==========================================================================
+   HEADER
+   ========================================================================== */
+
 .site-header {
     position: fixed;
     top: 2rem;
-    left: var(--side-margin);
-    right: var(--side-margin);
+    left: var(--side-margin-mobile);
+    right: var(--side-margin-mobile);
     z-index: 100;
     display: flex;
     justify-content: space-between;
@@ -108,7 +131,6 @@ u {
     opacity: 0.8;
 }
 
-/* --- Header Navigation --- */
 .header-nav {
     display: flex;
     align-items: center;
@@ -126,7 +148,11 @@ u {
     height: 100%;
 }
 
-/* --- Gallery description--- */
+/* ==========================================================================
+   CONTENT SECTIONS
+   ========================================================================== */
+
+/* Gallery Description */
 .gallery-description {
     text-align: left;
     margin-bottom: 1.5rem;
@@ -134,14 +160,22 @@ u {
     right: var(--side-margin);
 }
 
-
-/* --- Section: Manifesto --- */
+/* Manifesto Section */
 .manifesto {
     text-align: center;
     margin-bottom: 120px;
 }
 
-/* --- Section: Members Grid --- */
+/* Friends Section */
+.friends {
+    text-align: center;
+    margin-top: 3.75rem;
+}
+
+/* ==========================================================================
+   MEMBERS GRID
+   ========================================================================== */
+
 .members-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -152,15 +186,7 @@ u {
     margin-right: auto;
 }
 
-@media (min-width: 768px) {
-    .members-grid {
-        grid-template-columns: repeat(2, 1fr);
-        column-gap: 1.7rem;
-        row-gap: 80px;
-    }
-}
-
-/* --- Member Card --- */
+/* Member Card */
 .member-card {
     display: flex;
     flex-direction: column;
@@ -190,14 +216,10 @@ u {
     text-align: center;
 }
 
-/* --- Section: Friends --- */
-.friends {
-    text-align: center;
-    margin-top: 3.75rem;
-}
+/* ==========================================================================
+   PHOTO GALLERY
+   ========================================================================== */
 
-
-/* --- Photo Grid --- */
 #arena-gallery {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -225,7 +247,10 @@ u {
     opacity: 1;
 }
 
-/* --- Site Footer --- */
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+
 .site-footer {
     font-family: 'FreeMono', 'Courier New', monospace;
     text-align: center;
@@ -234,8 +259,12 @@ u {
     letter-spacing: 0.05em;
     color: #999;
     opacity: 0;
-    animation:fadeIn 0.5s ease 2s forwards;
+    animation: fadeIn 0.5s ease 2s forwards;
 }
+
+/* ==========================================================================
+   ANIMATIONS
+   ========================================================================== */
 
 @keyframes fadeIn {
     to {
@@ -243,41 +272,71 @@ u {
     }
 }
 
-/* --- Responsive Breakpoints --- */
+/* ==========================================================================
+   MEDIA QUERIES
+   ========================================================================== */
+
+/* Desktop: 751px and up */
+@media (min-width: 751px) {
+    body {
+        padding-left: var(--side-margin);
+        padding-right: var(--side-margin);
+    }
+    
+    .site-header {
+        left: var(--side-margin);
+        right: var(--side-margin);
+    }
+}
+
+/* Tablets: 768px and up */
+@media (min-width: 768px) {
+    .members-grid {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 1.7rem;
+        row-gap: 80px;
+    }
+}
+
+/* Large Screens: up to 1700px */
 @media (max-width: 1700px) {
     #arena-gallery {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
+/* Medium Screens: up to 1200px */
 @media (max-width: 1200px) {
     #arena-gallery {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
+/* Mobile: up to 750px */
 @media (max-width: 750px) {
     body {
         font-size: 0.8rem;
-        padding: 6.25rem var(--side-margin-mobile) 3.75rem;
     }
+    
     .site-header {
         --header-title-size: 1.5rem;
-        left: var(--side-margin-mobile);
-        right: var(--side-margin-mobile);
     }
+    
     .gallery-description {
         font-size: 0.8rem;
         left: var(--side-margin-mobile);
     }
+    
     .site-footer {
         font-size: 0.7rem;
-    }  
+    }
+    
     .member-name {
         font-size: 1.1rem;
-    }   
+    }
+    
     #arena-gallery {
         grid-template-columns: 1fr;
         gap: var(--side-margin-mobile);
-    }    
+    }
 }
