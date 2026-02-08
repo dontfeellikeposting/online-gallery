@@ -154,6 +154,7 @@ u {
 
 /* Gallery Description */
 .gallery-description {
+    font-size: 1rem;    
     text-align: left;
     margin-bottom: 1.5rem;
     left: var(--side-margin);
@@ -315,7 +316,7 @@ u {
 /* Mobile: up to 750px */
 @media (max-width: 750px) {
     body {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
     }
     
     .site-header {
@@ -323,12 +324,12 @@ u {
     }
     
     .gallery-description {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
         left: var(--side-margin-mobile);
     }
     
     .site-footer {
-        font-size: 0.7rem;
+        font-size: 0.8rem;
     }
     
     .member-name {
