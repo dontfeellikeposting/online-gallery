@@ -23,7 +23,7 @@ jobs:
           const https = require('https');
 
           const CHANNEL_SLUG = 'feed-2pl7kppxxkq';
-          const PER_PAGE = 100;
+          const LIMIT = 40;
           const SORT = 'created_at_desc';
 
           function get(url) {
@@ -45,38 +45,25 @@ jobs:
             });
           }
 
-          async function fetchAllImages() {
-            const images = [];
-            let page = 1;
-            let hasMore = true;
+          async function fetchImages() {
+            const url = `https://api.are.na/v3/channels/${CHANNEL_SLUG}/contents?per=${LIMIT}&sort=${SORT}&page=1`;
+            console.log(`Fetching: ${url}`);
+            const data = await get(url);
 
-            while (hasMore) {
-              const url = `https://api.are.na/v3/channels/${CHANNEL_SLUG}/contents?per=${PER_PAGE}&sort=${SORT}&page=${page}`;
-              console.log(`Fetching page ${page}: ${url}`);
-              const data = await get(url);
+            const images = data.data
+              .filter(block => block.type === 'Image' && block.image)
+              .map(block => ({
+                id: block.id,
+                title: block.title || '',
+                url: block.image.large.src,
+                url_2x: block.image.large.src_2x
+              }));
 
-              const pageImages = data.data.filter(block => block.type === 'Image' && block.image);
-              for (const block of pageImages) {
-                images.push({
-                  id: block.id,
-                  title: block.title || '',
-                  url: block.image.large.src,
-                  url_2x: block.image.large.src_2x
-                });
-              }
-
-              console.log(`  Page ${page}: ${pageImages.length} images (${images.length} total so far)`);
-              hasMore = data.meta.has_more_pages;
-              page++;
-
-              // Be polite to the API between paginated requests
-              if (hasMore) await new Promise(r => setTimeout(r, 300));
-            }
-
+            console.log(`Fetched ${images.length} images.`);
             return images;
           }
 
-          fetchAllImages().then(images => {
+          fetchImages().then(images => {
             fs.mkdirSync('data', { recursive: true });
             fs.writeFileSync('data/images.json', JSON.stringify(images, null, 2));
             console.log(`Done. Wrote ${images.length} images to data/images.json`);
