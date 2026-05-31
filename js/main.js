@@ -18,7 +18,17 @@ async function loadPhotos() {
             return;
         }
 
-        images.forEach(renderImage);
+        const imgElements = [];
+        let revealedCount = 0;
+
+        function tryReveal() {
+            while (revealedCount < imgElements.length && imgElements[revealedCount].complete) {
+                imgElements[revealedCount].classList.add('loaded');
+                revealedCount++;
+            }
+        }
+
+        images.forEach((image, index) => renderImage(image, index, imgElements, tryReveal));
 
     } catch (error) {
         console.error('Error loading images:', error);
@@ -26,21 +36,26 @@ async function loadPhotos() {
     }
 }
 
-function renderImage(image) {
+function renderImage(image, index, imgElements, tryReveal) {
     const link = document.createElement('a');
     link.href = `https://www.are.na/block/${image.id}`;
     link.target = '_blank';
     link.rel = 'noopener noreferrer';
 
     const img = document.createElement('img');
+    img.alt = image.title || 'Untitled';
+    if (image.width && image.height) {
+        img.style.aspectRatio = `${image.width} / ${image.height}`;
+    }
+
+    imgElements.push(img);
+    img.onload = tryReveal;
+    img.onerror = tryReveal;
+
     img.src = image.url;
     if (image.url_2x) {
         img.srcset = `${image.url} 1x, ${image.url_2x} 2x`;
     }
-    img.alt = image.title || 'Untitled';
-    img.loading = 'lazy';
-
-    img.onload = () => img.classList.add('loaded');
 
     link.appendChild(img);
     gallery.appendChild(link);
