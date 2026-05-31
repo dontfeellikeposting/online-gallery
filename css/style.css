@@ -52,7 +52,7 @@ body {
     background-color: #ffffff;
     color: #101010;
     line-height: 1.5;
-    font-size: 1.4rem;
+    font-size: 1.1rem;
     letter-spacing: 0.026em;
     padding: 6.25rem var(--side-margin-mobile) 3.75rem;
 }
@@ -60,18 +60,6 @@ body {
 /* ==========================================================================
    TYPOGRAPHY
    ========================================================================== */
-
-h1,
-h2 {
-    font-family: 'Be Vietnam Pro', "Helvetica Neue", Helvetica, sans-serif;
-    font-weight: 300;
-    font-size: 1.32rem;
-    margin-bottom: 5px;
-}
-
-h2 {
-    font-weight: normal;
-}
 
 a {
     color: inherit;
@@ -86,7 +74,7 @@ u {
 .member-name {
     font-weight: normal;
     margin-bottom: 5px;
-    font-size: 1.7rem;
+    font-size: 1.3rem;
 }
 
 /* ==========================================================================
@@ -144,8 +132,7 @@ u {
    ========================================================================== */
 
 /* Gallery Description */
-.gallery-description {
-    font-size: 1rem;    
+.gallery-description {    
     text-align: left;
     margin-bottom: 1.5rem;
     left: var(--side-margin);
@@ -206,6 +193,11 @@ u {
 
 .member-info {
     text-align: center;
+    transition: opacity 0.3s ease;
+}
+
+.member-card:hover .member-info {
+    opacity: 0.8;
 }
 
 /* ==========================================================================
