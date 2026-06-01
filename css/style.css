@@ -95,6 +95,7 @@ u {
 }
 
 .site-header h1 {
+    font-family: "Be Vietnam Pro", sans-serif;
     font-weight: 400;
     font-size: var(--header-title-size);
     line-height: var(--header-line-height);
@@ -149,6 +150,14 @@ u {
 .friends {
     text-align: center;
     margin-top: 3.75rem;
+}
+
+/* History Section */
+.history {
+    text-align: justify;      /* keeps lines justified */
+    max-width: 70ch;          /* readable line length */
+    margin: 5rem auto 0;   /* centers the block horizontally */
+    padding-inline: 1rem;     /* side space on small screens */
 }
 
 /* ==========================================================================
