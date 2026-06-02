@@ -57,6 +57,14 @@ body {
     padding: 6.25rem var(--side-margin-mobile) 3.75rem;
 }
 
+body a {
+    transition: opacity 0.3s ease;
+}
+
+body a:hover {
+    opacity: 0.9;
+}
+
 /* ==========================================================================
    TYPOGRAPHY
    ========================================================================== */
@@ -101,14 +109,12 @@ u {
     line-height: var(--header-line-height);
 }
 
-.site-header h1 a,
 .pin-icon {
     transition: opacity 0.3s ease;
 }
 
-.site-header h1 a:hover,
 .pin-icon:hover {
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 .header-nav {
@@ -197,7 +203,7 @@ u {
 }
 
 .member-card:hover .image-wrapper img {
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 .member-info {
@@ -206,7 +212,7 @@ u {
 }
 
 .member-card:hover .member-info {
-    opacity: 0.8;
+    opacity: 0.85;
 }
 
 /* ==========================================================================
@@ -265,6 +271,10 @@ img {
     color: #999;
     opacity: 0;
     animation: fadeIn 0.5s ease 2s forwards;
+}
+
+.site-footer a:hover {
+    opacity: 1;
 }
 
 /* ==========================================================================
