@@ -9,7 +9,7 @@ Explore the website here:
 
 - Dynamic gallery powered by Are.na API
 - Responsive grid layout (1-4 columns)
-- Lazy-loaded images
+- Progressive image reveal as files finish loading from the Are.na API
 
 ## Tech Stack
 

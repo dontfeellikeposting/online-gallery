@@ -39,8 +39,8 @@ html {
    ========================================================================== */
 
 :root {
-    --side-margin: 3.5rem;
-    --side-margin-mobile: 1rem;
+    --page-gutter: 1rem;
+    --page-gutter-desktop: 3.5rem;
 }
 
 /* ==========================================================================
@@ -54,14 +54,14 @@ body {
     line-height: 1.5;
     font-size: 1.1rem;
     letter-spacing: 0.026em;
-    padding: 6.25rem var(--side-margin-mobile) 3.75rem;
+    padding: 6.25rem var(--page-gutter) 3.75rem;
 }
 
 body a {
     transition: opacity 0.3s ease;
 }
 
-body a:hover {
+body a:not(.nav-icon):hover {
     opacity: 0.9;
 }
 
@@ -92,8 +92,8 @@ u {
 .site-header {
     position: fixed;
     top: 2rem;
-    left: var(--side-margin-mobile);
-    right: var(--side-margin-mobile);
+    inset-inline-start: var(--page-gutter);
+    inset-inline-end: var(--page-gutter);
     z-index: 100;
     display: flex;
     justify-content: space-between;
@@ -109,29 +109,30 @@ u {
     line-height: var(--header-line-height);
 }
 
-.nav-icon {
-    transition: opacity 0.3s ease;
-}
-
-.nav-icon:hover {
-    opacity: 0.9;
-}
-
 .header-nav {
     display: flex;
     align-items: center;
 }
 
 .nav-icon {
-    display: block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     width: calc(var(--header-title-size) * var(--header-line-height));
     height: calc(var(--header-title-size) * var(--header-line-height));
+    line-height: 0;
     cursor: pointer;
 }
 
 .nav-icon svg {
+    display: block;
     width: 100%;
     height: 100%;
+}
+
+.nav-icon:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
 }
 
 /* ==========================================================================
@@ -142,8 +143,6 @@ u {
 .gallery-description {    
     text-align: left;
     margin-bottom: 1.5rem;
-    left: var(--side-margin);
-    right: var(--side-margin);
 }
 
 /* Manifesto Section */
@@ -222,7 +221,7 @@ u {
 #arena-gallery {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: var(--side-margin);
+    gap: var(--page-gutter-desktop);
     align-items: end;
     max-width: 100%;
     margin: 0 auto;
@@ -294,13 +293,13 @@ img {
 /* Desktop: 751px and up */
 @media (min-width: 751px) {
     body {
-        padding-left: var(--side-margin);
-        padding-right: var(--side-margin);
+        padding-left: var(--page-gutter-desktop);
+        padding-right: var(--page-gutter-desktop);
     }
     
     .site-header {
-        left: var(--side-margin);
-        right: var(--side-margin);
+        inset-inline-start: var(--page-gutter-desktop);
+        inset-inline-end: var(--page-gutter-desktop);
     }
 }
 
@@ -339,7 +338,6 @@ img {
     
     .gallery-description {
         font-size: 0.9rem;
-        left: var(--side-margin-mobile);
     }
     
     .site-footer {
@@ -352,6 +350,6 @@ img {
     
     #arena-gallery {
         grid-template-columns: 1fr;
-        gap: var(--side-margin-mobile);
+        gap: var(--page-gutter);
     }
 }

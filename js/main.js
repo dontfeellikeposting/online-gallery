@@ -6,7 +6,7 @@ async function loadPhotos() {
     }
 
     try {
-        const response = await fetch('/data/images.json');
+        const response = await fetch('data/images.json');
 
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
@@ -28,7 +28,7 @@ async function loadPhotos() {
             }
         }
 
-        images.forEach((image, index) => renderImage(image, index, imgElements, tryReveal));
+        images.forEach((image) => renderImage(image, imgElements, tryReveal));
 
     } catch (error) {
         console.error('Error loading images:', error);
@@ -36,7 +36,7 @@ async function loadPhotos() {
     }
 }
 
-function renderImage(image, index, imgElements, tryReveal) {
+function renderImage(image, imgElements, tryReveal) {
     const link = document.createElement('a');
     link.href = `https://www.are.na/block/${image.id}`;
     link.target = '_blank';
