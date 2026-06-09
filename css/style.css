@@ -109,11 +109,11 @@ u {
     line-height: var(--header-line-height);
 }
 
-.pin-icon {
+.nav-icon {
     transition: opacity 0.3s ease;
 }
 
-.pin-icon:hover {
+.nav-icon:hover {
     opacity: 0.9;
 }
 
@@ -122,14 +122,14 @@ u {
     align-items: center;
 }
 
-.pin-icon {
+.nav-icon {
     display: block;
     width: calc(var(--header-title-size) * var(--header-line-height));
     height: calc(var(--header-title-size) * var(--header-line-height));
     cursor: pointer;
 }
 
-.pin-icon svg {
+.nav-icon svg {
     width: 100%;
     height: 100%;
 }
