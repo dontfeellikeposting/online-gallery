@@ -6,7 +6,7 @@ async function loadPhotos() {
     }
 
     try {
-        const response = await fetch('data/images.json');
+        const response = await fetch('data/images.json', { cache: 'no-cache' });
 
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
