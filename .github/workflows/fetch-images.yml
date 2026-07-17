@@ -23,7 +23,7 @@ jobs:
           const fs = require('fs');
           const https = require('https');
 
-          const CHANNEL_SLUG = 'feed-2pl7kppxxkq';
+          const CHANNEL_SLUG = 'feed-idxbunqrtlc';
           const LIMIT = 40;
           const SORT = 'created_at_desc';
 
