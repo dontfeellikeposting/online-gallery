@@ -61,7 +61,7 @@ body a {
     transition: opacity 0.3s ease;
 }
 
-body a:not(.nav-icon):hover {
+body a:hover {
     opacity: 0.9;
 }
 
@@ -114,23 +114,13 @@ u {
     align-items: center;
 }
 
-.nav-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: calc(var(--header-title-size) * var(--header-line-height));
-    height: calc(var(--header-title-size) * var(--header-line-height));
-    line-height: 0;
-    cursor: pointer;
+.nav-link {
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-size: var(--header-title-size);
+    line-height: var(--header-line-height);
 }
 
-.nav-icon svg {
-    display: block;
-    width: 100%;
-    height: 100%;
-}
-
-.nav-icon:focus-visible {
+.nav-link:focus-visible {
     outline: 2px solid currentColor;
     outline-offset: 2px;
 }
