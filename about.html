@@ -187,6 +187,23 @@
                 <br>
             </p>
         </section>
+        <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="7e0c11ac-969b-4d8b-8b7b-01e6a074b5d4">
+            <input type="hidden" name="subject" value="new message from dflp">
+            <input type="hidden" name="redirect" value="https://dontfeellikeposting.online/about.html?sent">
+            <input type="checkbox" name="botcheck" class="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <p>feel like talking?</p>
+            <input type="text" name="name" placeholder="name" aria-label="name" required>
+            <input type="email" name="email" placeholder="email" aria-label="email" required>
+            <textarea name="message" rows="3" placeholder="message" aria-label="message" required></textarea>
+            <button type="submit">send</button>
+        </form>
+        <dialog id="thanks" class="thanks-dialog">
+            <p>thanks, your message is on its way</p>
+            <form method="dialog">
+                <button type="submit">close</button>
+            </form>
+        </dialog>
     </main>
     <footer class="site-footer">
         <p>powered by <a href="https://www.are.na/don-t-feel-like-posting/blocks?order=CREATED_AT-DESC" target="_blank" rel="noopener noreferrer">are.na</a>, built by <a href="about.html">dflp team</a></p>

@@ -79,3 +79,10 @@ document.addEventListener('dragstart', (e) => {
         e.preventDefault();
     }
 });
+
+// web3forms redirects back to about.html?sent after a successful submit
+const thanks = document.getElementById('thanks');
+if (thanks && new URLSearchParams(location.search).has('sent')) {
+    history.replaceState(null, '', location.pathname);
+    thanks.showModal();
+}

@@ -165,6 +165,85 @@ u {
     padding-inline: 1rem;     /* side space on small screens */
 }
 
+/* Contact Form */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 70ch;          /* same width as .history */
+    margin: 6rem auto 7rem;
+    padding-inline: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form button {
+    font: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+    background: none;
+    border: 0;
+    border-bottom: 1px solid #999;
+    padding: 0.25rem 0;
+    resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-bottom-color: #101010;
+}
+
+.contact-form button {
+    align-self: flex-start;
+    border: 0;
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.contact-form button:hover,
+.contact-form button:focus-visible {
+    opacity: 0.6;
+}
+
+.contact-form .botcheck {
+    display: none;
+}
+
+/* Thanks Popup */
+.thanks-dialog {
+    margin: auto;
+    padding: 3rem 4rem;
+    border: 0;
+    background: #ffffff;
+    color: inherit;
+    font: inherit;
+    letter-spacing: inherit;
+    text-align: center;
+}
+
+.thanks-dialog::backdrop {
+    background: rgba(255, 255, 255, 0.85);
+}
+
+.thanks-dialog button {
+    margin-top: 2rem;
+    font: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.thanks-dialog button:hover,
+.thanks-dialog button:focus-visible {
+    opacity: 0.6;
+}
+
 /* ==========================================================================
    MEMBERS GRID
    ========================================================================== */
